@@ -16,6 +16,15 @@ df = pd.read_csv('Data Sets/ratings.csv')
 userId = df['userId'].nunique()
 ratings = df['rating'].nunique()
 
+plt.figure(figsize = (10,7))
+plt.xlabel("unique movieId")
+plt.ylabel("review count")
+plt.title("movies with most review - top 30")
+df['movieId'].value_counts()[:30].plot(kind = 'bar')
+
+
+
+
 df = pd.read_csv('Data Sets/tags.csv')
 #print(df.nunique(axis=0))
 tag = df['tag'].nunique()
